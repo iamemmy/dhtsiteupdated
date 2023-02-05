@@ -1,0 +1,72 @@
+// Google font
+// @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600&family=Open+Sans:wght@300;400;500;700&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap');
+
+// GENERAL
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    // outline: 1px solid red;
+}
+
+//Variable
+$colors:(
+    color01: #000000,
+    color02: #BCCEF8,
+    color03: #1A1D30,
+    color04: #8FE3CF,
+    color05: #ffffff,
+    color06: #1A1D30,
+    color07: #D8D9CF,
+    color08: #FF0000,
+    color09: #002B5B,
+    color10: #0000001a
+);
+
+// Function
+@function getColor($key){
+    @return map-get($colors, $key);
+}
+
+// Mixin
+@mixin portrait{
+    @media (max-width: 768.2px){
+        @content;
+    }
+}
+@mixin landscape{
+    @media (max-width: 992.2px){
+        @content;
+    }
+}
+@mixin menu-resize{
+    @media (max-width: 830px){
+        @content;
+    }
+}
+
+//Keyframes
+@keyframes slide {
+    from {
+        right: -50%;
+        opacity: 0;
+    }
+    to {
+        right: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
